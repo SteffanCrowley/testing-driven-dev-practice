@@ -1,8 +1,75 @@
 function caesar(string) {
-  let newString = string.charAt(0).toUpperCase();
+  let lowerArray = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+  ];
+  let upperArray = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+  ];
 
-  for (let i = 1; i < string.length; i++) {
-    newString = newString + string.charAt(i).toLowerCase();
+  let newString = "";
+
+  for (let i = 0; i < string.length; i++) {
+    if (string.charAt(i) == " ") {
+      newString = newString + " ";
+    } else if (string.charAt(i) == `'`) {
+      newString = newString + `'`;
+    } else if (string.charAt(i) == string.charAt(i).toLowerCase()) {
+      newString =
+        newString + lowerArray[lowerArray.indexOf(string.charAt(i)) + 1];
+    } else if (string.charAt(i) == string.charAt(i).toUpperCase()) {
+      newString =
+        newString + upperArray[upperArray.indexOf(string.charAt(i)) + 1];
+    }
   }
   return newString;
 }
